@@ -1,4 +1,5 @@
 import 'package:canteen_flow_app/screen/loging.dart';
+import 'package:canteen_flow_app/screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplshScreen extends StatefulWidget {
@@ -13,10 +14,10 @@ class _SplshScreenState extends State<SplshScreen> {
   void initState() {
     super.initState();
     // Delay for 2 seconds and then navigate to another screen
-    Future.delayed(const Duration(seconds: 1), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const SignInPage()),
+        MaterialPageRoute(builder: (context) => const WelcomeScreen()),
       );
     });
   }

@@ -1,3 +1,4 @@
+import 'package:canteen_flow_app/screen/splsh_screen.dart';
 import 'package:canteen_flow_app/screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.amber,
       ),
-      home: const WelcomeScreen(),
+      home: const SplshScreen(),
     );
   }
 }

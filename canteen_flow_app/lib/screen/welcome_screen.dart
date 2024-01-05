@@ -1,3 +1,5 @@
+import 'package:canteen_flow_app/screen/loging.dart';
+import 'package:canteen_flow_app/screen/register.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -65,24 +67,42 @@ class WelcomeScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 20.0),
                           SizedBox(
-                            width: 200, // Adjust the width of the buttons as needed
+                            width:
+                                200, // Adjust the width of the buttons as needed
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const LoginScreen()));
+                              },
                               style: ElevatedButton.styleFrom(
-                                primary: const Color.fromRGBO(245, 179, 88, 1), // Set your desired background color
+                                primary: const Color.fromRGBO(245, 179, 88,
+                                    1), // Set your desired background color
                               ),
                               child: const Text('Login'),
                             ),
                           ),
                           const SizedBox(height: 12.0),
                           SizedBox(
-                            width: 200, // Adjust the width of the buttons as needed
+                            width:
+                                200, // Adjust the width of the buttons as needed
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const RegisterScreen()));
+                              },
                               style: ElevatedButton.styleFrom(
-                                primary: const Color.fromARGB(255, 248, 248, 248),
-                                elevation: 5, // Set the elevation for the box shadow
-                                shadowColor: Colors.black, // Set your desired background color
+                                primary:
+                                    const Color.fromARGB(255, 248, 248, 248),
+                                elevation:
+                                    5, // Set the elevation for the box shadow
+                                shadowColor: Colors
+                                    .black, // Set your desired background color
                               ),
                               child: const Text('Register'),
                             ),
