@@ -12,12 +12,12 @@ class LoginScreen extends StatelessWidget {
           children: [
             Container(
               width: 400,
-              height: 900,
+              height: 750,
               padding: const EdgeInsets.only(
-                top: 176,
+                // top: 176,
                 left: 36,
                 right: 35,
-                bottom: 176,
+                // bottom: 176,
               ),
               clipBehavior: Clip.antiAlias,
               decoration: const BoxDecoration(color: Colors.white),
@@ -28,7 +28,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   const SizedBox(
                     width: double.infinity,
-                    height: 130,
+                    height: 120,
                     child: Stack(
                       children: [
                         Positioned(
