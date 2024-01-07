@@ -1,4 +1,5 @@
 import 'package:canteen_flow_app/screen/about.dart';
+import 'package:canteen_flow_app/screen/feedback.dart';
 import 'package:canteen_flow_app/screen/navdrawer.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class HomeScreen extends StatelessWidget {
           height: 120,
         ),
         actions: [
-          IconButton(onPressed:(){}, icon: Icon(Icons.person))
+          IconButton(onPressed:(){}, icon: const Icon(Icons.person))
         ],
       ),
 
@@ -25,10 +26,17 @@ class HomeScreen extends StatelessWidget {
                     builder: (context) =>
                      const About()));
         },
+
+        feedback: () {
+          Navigator.push(
+                    context,MaterialPageRoute(
+                    builder: (context) =>
+                     FeedbackScreen()));
+        },
       ),
 
 
-      
+
       body: SingleChildScrollView(
         child: Center(
           child: Column(

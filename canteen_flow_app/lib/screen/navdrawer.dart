@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class AppDrawer extends StatelessWidget {
   final Function() about;
+  final Function() feedback;
 
-  const AppDrawer({super.key,
-  required this.about
-  });
+  const AppDrawer({super.key, required this.about, required this.feedback});
+  
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +31,7 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.feedback),
             title: Text('feedback & rate'),
-            onTap: () {
-              // Add functionality for the Settings drawer item
-              Navigator.pop(context); // Close the drawer
-            },
+            onTap: feedback,
           ),
 
           ListTile(
