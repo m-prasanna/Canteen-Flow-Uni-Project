@@ -1,3 +1,4 @@
+import 'package:canteen_flow_app/screen/about.dart';
 import 'package:canteen_flow_app/screen/navdrawer.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,18 @@ class HomeScreen extends StatelessWidget {
           IconButton(onPressed:(){}, icon: Icon(Icons.person))
         ],
       ),
-      drawer: AppDrawer(),
+
+      drawer: AppDrawer(
+        about: () {
+          Navigator.push(
+                    context,MaterialPageRoute(
+                    builder: (context) =>
+                     const About()));
+        },
+      ),
+
+
+      
       body: SingleChildScrollView(
         child: Center(
           child: Column(
