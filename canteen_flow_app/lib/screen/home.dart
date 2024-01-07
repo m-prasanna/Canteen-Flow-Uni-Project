@@ -6,193 +6,109 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-                width: 428,
-                height: 926,
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(color: Colors.white),
-                child: Stack(
-                  children: [
-                    Positioned(
-                      left: 134,
-                      top: 41,
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            left: 0,
-                            top: 0,
-                            child: Text(
-                              'Canteen',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Color(0xFF101314),
-                                fontSize: 24,
-                                fontFamily: 'Montserrat',
-                                fontWeight: FontWeight.w800,
-                                height: 0,
-                                letterSpacing: -1.44,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            left: 99,
-                            top: 0,
-                            child: Text(
-                              'Flow.',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Color(0xFFF5B358),
-                                fontSize: 24,
-                                fontFamily: 'Montserrat',
-                                fontWeight: FontWeight.w800,
-                                height: 0,
-                                letterSpacing: -1.44,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Positioned(
-                      left: 37,
-                      top: 141,
-                      child: Container(
-                        width: 356,
-                        height: 223,
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              left: 0,
-                              top: 0,
-                              child: Container(
-                                width: 356,
-                                height: 223,
-                                decoration: ShapeDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage("assets/Resualt 1.png"),
-                                    fit: BoxFit.fill,
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(11),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              left: 69,
-                              top: 94,
-                              child: Text(
-                                'Main Cafeteria',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 30,
-                                  fontFamily: 'Rubik',
-                                  fontWeight: FontWeight.w700,
-                                  height: 0,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 37,
-                      top: 396,
-                      child: Container(
-                        width: 356,
-                        height: 223,
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              left: 0,
-                              top: 0,
-                              child: Container(
-                                width: 356,
-                                height: 223,
-                                decoration: ShapeDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage("assets/Resualt 1.png"),
-                                    fit: BoxFit.fill,
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(11),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              left: 51,
-                              top: 94,
-                              child: Text(
-                                'Gallery Cafeteria',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 30,
-                                  fontFamily: 'Rubik',
-                                  fontWeight: FontWeight.w700,
-                                  height: 0,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 37,
-                      top: 651,
-                      child: Container(
-                        width: 356,
-                        height: 223,
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              left: 0,
-                              top: 0,
-                              child: Container(
-                                width: 356,
-                                height: 223,
-                                decoration: ShapeDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage("assets/Resualt 1.png"),
-                                    fit: BoxFit.fill,
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(11),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              left: 100,
-                              top: 94,
-                              child: Text(
-                                'G Canteen',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 30,
-                                  fontFamily: 'Rubik',
-                                  fontWeight: FontWeight.w700,
-                                  height: 0,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    
-                    
-                  ],
-                ),
-              )
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {},
+        ),
+        title: Image.asset(
+          "assets/splash.png",
+          height: 120,
+        ),
+        actions: [
+          IconButton(onPressed:(){}, icon: Icon(Icons.person))
         ],
+      ),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: 428,
+                height: 750,
+                child: Container(
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(color: Colors.white),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(height: 10),
+                      _buildCafeteriaContainer(
+                        imageAsset: "assets/Resualt 1.png",
+                        title: 'Main Cafeteria',
+                      ),
+                      SizedBox(height: 10),
+                      _buildCafeteriaContainer(
+                        imageAsset: "assets/Resualt 1.png",
+                        title: 'Gallery Cafeteria',
+                      ),
+                      SizedBox(height: 10),
+                      _buildCafeteriaContainer(
+                        imageAsset: "assets/Resualt 1.png",
+                        title: 'G Canteen',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCafeteriaContainer(
+      {required String imageAsset, required String title}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Container(
+        width: double.infinity,
+        height: 240,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              width: double.infinity,
+              height: 223,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(imageAsset),
+                  fit: BoxFit.fill,
+                ),
+                borderRadius: BorderRadius.circular(11),
+              ),
+              child: ElevatedButton(
+                onPressed: () {
+                  // Add functionality here
+                },
+                child: Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontFamily: 'Rubik',
+                    fontWeight: FontWeight.w700,
+                    height: 0,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.transparent,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(11),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+          ],
+        ),
       ),
     );
   }
