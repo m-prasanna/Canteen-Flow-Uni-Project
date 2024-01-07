@@ -1,3 +1,4 @@
+import 'package:canteen_flow_app/screen/home.dart';
 import 'package:canteen_flow_app/screen/loging.dart';
 import 'package:flutter/material.dart';
 
@@ -118,7 +119,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const LoginScreen(),
+                                  builder: (context) => const HomeScreen(),
                                 ),
                               );
                             },
