@@ -8,11 +8,11 @@ class About extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize:
-            Size.fromHeight(300), // Set preferred height for the app bar
+            const Size.fromHeight(300), // Set preferred height for the app bar
         child: AppBar(
           flexibleSpace: Container(
             height: 600,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/Resualt 1.png'),
                 fit: BoxFit.cover,
