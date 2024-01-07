@@ -1,3 +1,5 @@
+import 'package:canteen_flow_app/screen/home.dart';
+import 'package:canteen_flow_app/screen/register.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -116,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const LoginScreen(),
+                                  builder: (context) => const HomeScreen(),
                                 ),
                               );
                             },
@@ -145,7 +147,12 @@ class _LoginScreenState extends State<LoginScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               TextButton(
-                                onPressed: () {},
+                                onPressed: () { Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const RegisterScreen(),
+                                ),
+                                 ); },
                                 child: const Text(
                                   'Create new account',
                                   style: TextStyle(

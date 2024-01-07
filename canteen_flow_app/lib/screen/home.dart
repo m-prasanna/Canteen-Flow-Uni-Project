@@ -1,3 +1,4 @@
+import 'package:canteen_flow_app/screen/navdrawer.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -7,10 +8,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () {},
-        ),
         title: Image.asset(
           "assets/splash.png",
           height: 120,
@@ -19,6 +16,7 @@ class HomeScreen extends StatelessWidget {
           IconButton(onPressed:(){}, icon: Icon(Icons.person))
         ],
       ),
+      drawer: AppDrawer(),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
