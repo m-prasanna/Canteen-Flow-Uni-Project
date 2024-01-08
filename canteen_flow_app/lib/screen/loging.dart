@@ -61,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             horizontal: 20,
                           ),
                           decoration: BoxDecoration(
-                            color: Color(0xFFF1F4FF),
+                            color: const Color(0xFFF1F4FF),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           child: const TextField(
