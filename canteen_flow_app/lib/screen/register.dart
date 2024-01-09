@@ -1,6 +1,8 @@
 import 'package:canteen_flow_app/screen/home.dart';
-import 'package:canteen_flow_app/screen/loging.dart';
+// import 'package:canteen_flow_app/screen/loging.dart';
 import 'package:flutter/material.dart';
+// import 'package:canteen_flow_app/screen/HomeScreen';
+
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
