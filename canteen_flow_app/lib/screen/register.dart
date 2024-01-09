@@ -19,7 +19,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             children: [
               Container(
                 width: 400,
-                height: 750,
+                height: 800,
                 padding: const EdgeInsets.only(
                   left: 36,
                   right: 35,
