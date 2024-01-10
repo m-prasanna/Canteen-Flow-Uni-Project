@@ -94,7 +94,7 @@ class WelcomeScreen extends StatelessWidget {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const RegisterScreen()));
+                                             RegisterScreen()));
                               },
                               style: ElevatedButton.styleFrom(
                                 primary:

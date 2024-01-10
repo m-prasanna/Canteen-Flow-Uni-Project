@@ -1,5 +1,6 @@
 import 'package:canteen_flow_app/screen/loging.dart';
 import 'package:flutter/material.dart';
+<<<<<<< Updated upstream
 import 'package:canteen_flow_app/screen/home.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -35,6 +36,27 @@ class _RegisterScreenState extends State<RegisterScreen> {
       return 'Password must be at least 6 characters long';
     }
     return null;
+=======
+import 'package:dio/dio.dart';
+
+class RegisterScreen extends StatelessWidget {
+   RegisterScreen({Key? key});
+
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  bool _isNotValidate = false;
+
+  Dio dio = Dio();
+
+  void registerUser() async{
+    if(emailController.text.isNotEmpty && passwordController.text.isNotEmpty){
+
+    }else{
+      setState(() {
+        _isNotValidate = true;
+      });
+    }
+>>>>>>> Stashed changes
   }
 
   @override
@@ -263,6 +285,78 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ],
                   ),
                 ),
+<<<<<<< Updated upstream
+=======
+                SizedBox(height: 20),
+                TextFormField(
+                  controller: emailController,
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    filled: true,
+                    errorText: _isNotValidate ? "Enter Proper Info" : null,
+                    labelText: 'Email',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                SizedBox(height: 10),
+                TextFormField(
+                  controller: passwordController,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                SizedBox(height: 10),
+                TextFormField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: 'Confirm Password',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                SizedBox(height: 20),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        // Implement user button functionality
+                      },
+                      child: Text('User'),
+                    ),
+                    OutlinedButton(
+                      onPressed: () {
+                        // Implement admin button functionality
+                      },
+                      child: Text('Admin'),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    // Implement sign-in functionality
+                  },
+                  child: Text('Sign in'),
+                ),
+                SizedBox(height: 20),
+                OutlinedButton(
+                  onPressed: () {
+                    // Call the registration function when "Create new account" is pressed
+                    // _register();
+                  },
+                  child: Text('Create new account'),
+                ),
+                SizedBox(height: 20),
+                TextButton(
+                  onPressed: () {
+                    // Navigate to login screen
+                  },
+                  child: Text('Already have an account'),
+                ),
+>>>>>>> Stashed changes
               ],
             ),
           ),
