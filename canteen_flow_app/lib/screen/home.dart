@@ -7,19 +7,6 @@ class HomeScreen extends StatelessWidget {
   final token;
   const HomeScreen({@required this.token,Key? key,}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Image.asset(
-          "assets/splash.png",
-          height: 120,
-        ),
-        actions: [
-          IconButton(onPressed:(){}, icon: const Icon(Icons.person))
-        ],
-      ),
-
       // drawer: AppDrawer(
       //   about: () {
       //     Navigator.push(
@@ -35,8 +22,6 @@ class HomeScreen extends StatelessWidget {
       //                FeedbackScreen()));
       //   },
       // ),
-
-
 
       body: SingleChildScrollView(
         child: Center(
@@ -132,3 +117,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
