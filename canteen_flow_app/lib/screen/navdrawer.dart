@@ -1,3 +1,4 @@
+import 'package:canteen_flow_app/screen/loging.dart';
 import 'package:flutter/material.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -39,7 +40,12 @@ class AppDrawer extends StatelessWidget {
             title: Text('exit'),
             onTap: () {
               // Add functionality for the Settings drawer item
-              Navigator.pop(context); // Close the drawer
+              Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const LoginScreen(),
+                                    ),
+                                  );; // Close the drawer
             },
           ),
           // Add more ListTile widgets for additional items
