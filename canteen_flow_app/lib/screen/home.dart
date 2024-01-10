@@ -4,7 +4,8 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  final token;
+  const HomeScreen({@required this.token,Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

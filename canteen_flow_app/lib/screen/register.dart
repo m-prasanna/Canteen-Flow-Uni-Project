@@ -21,7 +21,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     String backend = dotenv.env['BACKEND'] as String;
 
     final String apiUrl =
-        '$backend/registration'; // Replace with your actual backend URL
+        '$backend/registration';
 
     // Validate password and confirm password
     if (passwordController.text != confirmPasswordController.text) {
