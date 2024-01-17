@@ -1,28 +1,43 @@
-// import 'package:canteen_flow_app/screen/about.dart';
-// import 'package:canteen_flow_app/screen/feedback.dart';
-// import 'package:canteen_flow_app/screen/navdrawer.dart';
+import 'package:canteen_flow_app/screen/about.dart';
+import 'package:canteen_flow_app/screen/feedback.dart';
+import 'package:canteen_flow_app/screen/navdrawer.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   final token;
-  const HomeScreen({@required this.token,Key? key,}) : super(key: key);
 
-      // drawer: AppDrawer(
-      //   about: () {
-      //     Navigator.push(
-      //               context,MaterialPageRoute(
-      //               builder: (context) =>
-      //                const About()));
-      //   },
+  const HomeScreen({@required this.token, Key? key}) : super(key: key);
 
-      //   feedback: () {
-      //     Navigator.push(
-      //               context,MaterialPageRoute(
-      //               builder: (context) =>
-      //                FeedbackScreen()));
-      //   },
-      // ),
-
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {},
+        ),
+        title: Image.asset(
+          "assets/splash.png",
+          height: 120,
+        ),
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.person)),
+        ],
+      ),
+      drawer: AppDrawer(
+        about: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const About()),
+          );
+        },
+        feedback: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => FeedbackScreen()),
+          );
+        },
+      ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -117,4 +132,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-

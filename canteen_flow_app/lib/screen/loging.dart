@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'home.dart';
 import 'register.dart';
@@ -14,66 +16,63 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-Future<void> loginUser() async {
-  if (emailController.text.isEmpty || passwordController.text.isEmpty) {
-    // Show a message or perform an action indicating that fields are empty
-    print('Please enter both email and password');
-    return;
-  }else
-  
-  // Print entered email and password
-  print('Entered Email: ${emailController.text}');
-  print('Entered Password: ${passwordController.text}');
-
-  var reqBody = {
-    "email": emailController.text,
-    "password": passwordController.text,
-  };
-
-  try {
-    await dotenv.load();
-    String backend = dotenv.env['BACKEND'] as String;
-    final String loginUrl = '$backend/login';
-
-    Dio dio = Dio();
-
-    // dio.options.connectTimeout = const Duration(seconds: 5);
-
-    final Response response = await dio.post(
-      loginUrl,
-      data: {
-        "email": emailController.text,
-        "password": passwordController.text,
-      }
-    );
-
-    var jsonResponse = response.data;
-    if (jsonResponse['status']) {
-      var myToken = jsonResponse['token'];
-
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setString('token', myToken);
-
-      setState(() {
-        // Trigger a rebuild to update the UI
-      });
-
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => HomeScreen(token: myToken),
-        ),
-      );
+  Future<void> loginUser() async {
+    if (emailController.text.isEmpty || passwordController.text.isEmpty) {
+      // Show a message or perform an action indicating that fields are empty
+      print('Please enter both email and password');
+      return;
     } else {
-      print('Login failed: ${jsonResponse['message']}');
-      // Handle login failure, show an error message or perform other actions
+      // Print entered email and password
+      print('Entered Email: ${emailController.text}');
+      print('Entered Password: ${passwordController.text}');
     }
-  } catch (error) {
-    print("Login failed: $error");
-    // Handle error, such as showing a snackbar or an alert dialog
-  }
-}
 
+    var reqBody = {
+      "email": emailController.text,
+      "password": passwordController.text,
+    };
+
+    try {
+      await dotenv.load();
+      String backend = dotenv.env['BACKEND'] as String;
+      final String loginUrl = '$backend/login';
+
+      Dio dio = Dio();
+
+      final Response response = await dio.post(
+        loginUrl,
+        data: {
+          "email": emailController.text,
+          "password": passwordController.text,
+        },
+      );
+
+      var jsonResponse = response.data;
+      if (jsonResponse['status']) {
+        var myToken = jsonResponse['token'];
+
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString('token', myToken);
+
+        setState(() {
+          // Trigger a rebuild to update the UI
+        });
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HomeScreen(token: myToken),
+          ),
+        );
+      } else {
+        print('Login failed: ${jsonResponse['message']}');
+        // Handle login failure, show an error message or perform other actions
+      }
+    } catch (error) {
+      print("Login failed: $error");
+      // Handle error, such as showing a snackbar or an alert dialog
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
