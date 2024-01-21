@@ -36,6 +36,7 @@ Future<void> loginUser() async {
     await dotenv.load();
     String backend = dotenv.env['BACKEND'] as String;
     final String loginUrl = '$backend/login';
+    print(loginUrl);
 
     Dio dio = Dio();
 
