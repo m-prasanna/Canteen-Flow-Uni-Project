@@ -5,39 +5,38 @@ import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   final token;
-  const HomeScreen({@required this.token,Key? key,}) : super(key: key);
 
+  const HomeScreen({@required this.token, Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {},
+        ),
         title: Image.asset(
           "assets/splash.png",
           height: 120,
         ),
         actions: [
-          IconButton(onPressed:(){}, icon: const Icon(Icons.person))
+          IconButton(onPressed: () {}, icon: Icon(Icons.person)),
         ],
       ),
-
       drawer: AppDrawer(
         about: () {
           Navigator.push(
-                    context,MaterialPageRoute(
-                    builder: (context) =>
-                     const About()));
+            context,
+            MaterialPageRoute(builder: (context) => const About()),
+          );
         },
-
         feedback: () {
           Navigator.push(
-                    context,MaterialPageRoute(
-                    builder: (context) =>
-                     FeedbackScreen()));
+            context,
+            MaterialPageRoute(builder: (context) => FeedbackScreen()),
+          );
         },
       ),
-
-
-
       body: SingleChildScrollView(
         child: Center(
           child: Column(
