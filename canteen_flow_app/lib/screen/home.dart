@@ -7,7 +7,6 @@ class HomeScreen extends StatelessWidget {
   final token;
 
   const HomeScreen({@required this.token, Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
