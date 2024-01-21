@@ -1,4 +1,4 @@
-import 'package:canteen_flow_app/screen/loging.dart';
+import 'loging.dart';
 import 'package:canteen_flow_app/screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
 

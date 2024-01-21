@@ -1,6 +1,7 @@
 import 'package:canteen_flow_app/screen/splsh_screen.dart';
 import 'package:canteen_flow_app/screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
@@ -11,7 +12,8 @@ class MyWidget extends StatelessWidget {
   }
 }
 
-void main() {
+Future main() async{
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
