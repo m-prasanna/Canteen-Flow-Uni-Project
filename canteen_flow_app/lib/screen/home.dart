@@ -13,8 +13,15 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.menu),
-          onPressed: () {},
+          onPressed: () {
+            Scaffold.of(context).openDrawer();
+          },
         ),
+
+
+
+
+        
         title: Image.asset(
           "assets/splash.png",
           height: 120,
