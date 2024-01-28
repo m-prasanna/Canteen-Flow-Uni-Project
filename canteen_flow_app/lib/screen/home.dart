@@ -1,5 +1,8 @@
 import 'package:canteen_flow_app/screen/about.dart';
 import 'package:canteen_flow_app/screen/feedback.dart';
+import 'package:canteen_flow_app/screen/gCanteen.dart';
+import 'package:canteen_flow_app/screen/galleryCafeteria.dart';
+import 'package:canteen_flow_app/screen/mainCafeteria.dart';
 import 'package:canteen_flow_app/screen/navdrawer.dart';
 import 'package:flutter/material.dart';
 
@@ -11,17 +14,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () {
-            Scaffold.of(context).openDrawer();
-          },
-        ),
-
-
-
-
-        
         title: Image.asset(
           "assets/splash.png",
           height: 120,
@@ -64,16 +56,40 @@ class HomeScreen extends StatelessWidget {
                       _buildCafeteriaContainer(
                         imageAsset: "assets/Resualt 1.png",
                         title: 'Main Cafeteria',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MainCafeteria(cafeteriaName: '',),
+                            ),
+                          );
+                        },
                       ),
                       SizedBox(height: 10),
                       _buildCafeteriaContainer(
                         imageAsset: "assets/Resualt 1.png",
                         title: 'Gallery Cafeteria',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => GalleryCafeteria(),
+                            ),
+                          );
+                        },
                       ),
                       SizedBox(height: 10),
                       _buildCafeteriaContainer(
                         imageAsset: "assets/Resualt 1.png",
                         title: 'G Canteen',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => GCanteen(),
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -86,8 +102,11 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildCafeteriaContainer(
-      {required String imageAsset, required String title}) {
+  Widget _buildCafeteriaContainer({
+    required String imageAsset,
+    required String title,
+    required VoidCallback onTap,
+  }) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Container(
@@ -108,9 +127,7 @@ class HomeScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(11),
               ),
               child: ElevatedButton(
-                onPressed: () {
-                  // Add functionality here
-                },
+                onPressed: onTap,
                 child: Text(
                   title,
                   textAlign: TextAlign.center,
