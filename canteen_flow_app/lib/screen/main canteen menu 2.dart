@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class MainCafeteriaMenuList2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -203,7 +205,8 @@ class MainCafeteriaMenuList2 extends StatelessWidget {
                           height: 72,
                           decoration: ShapeDecoration(
                             image: DecorationImage(
-                              image: NetworkImage("https://via.placeholder.com/72x72"),
+                              image: NetworkImage(
+                                  "https://via.placeholder.com/72x72"),
                               fit: BoxFit.fill,
                             ),
                             shape: RoundedRectangleBorder(
@@ -298,9 +301,7 @@ class MainCafeteriaMenuList2 extends StatelessWidget {
                                   child: Container(
                                     width: 4.67,
                                     height: 4.67,
-                                    child: Stack(children: [
-                                    ,
-                                    ]),
+                                    child: Stack(children: []),
                                   ),
                                 ),
                               ),
@@ -342,7 +343,8 @@ class MainCafeteriaMenuList2 extends StatelessWidget {
                           height: 72,
                           decoration: ShapeDecoration(
                             image: DecorationImage(
-                              image: NetworkImage("https://via.placeholder.com/72x72"),
+                              image: NetworkImage(
+                                  "https://via.placeholder.com/72x72"),
                               fit: BoxFit.fill,
                             ),
                             shape: RoundedRectangleBorder(
@@ -437,9 +439,7 @@ class MainCafeteriaMenuList2 extends StatelessWidget {
                                   child: Container(
                                     width: 4.67,
                                     height: 4.67,
-                                    child: Stack(children: [
-                                    ,
-                                    ]),
+                                    child: Stack(children: []),
                                   ),
                                 ),
                               ),
@@ -481,7 +481,8 @@ class MainCafeteriaMenuList2 extends StatelessWidget {
                           height: 72,
                           decoration: ShapeDecoration(
                             image: DecorationImage(
-                              image: NetworkImage("https://via.placeholder.com/72x72"),
+                              image: NetworkImage(
+                                  "https://via.placeholder.com/72x72"),
                               fit: BoxFit.fill,
                             ),
                             shape: RoundedRectangleBorder(
@@ -576,9 +577,7 @@ class MainCafeteriaMenuList2 extends StatelessWidget {
                                   child: Container(
                                     width: 4.67,
                                     height: 4.67,
-                                    child: Stack(children: [
-                                    ,
-                                    ]),
+                                    child: Stack(children: []),
                                   ),
                                 ),
                               ),
@@ -620,7 +619,8 @@ class MainCafeteriaMenuList2 extends StatelessWidget {
                           height: 72,
                           decoration: ShapeDecoration(
                             image: DecorationImage(
-                              image: NetworkImage("https://via.placeholder.com/72x72"),
+                              image: NetworkImage(
+                                  "https://via.placeholder.com/72x72"),
                               fit: BoxFit.fill,
                             ),
                             shape: RoundedRectangleBorder(
@@ -715,9 +715,7 @@ class MainCafeteriaMenuList2 extends StatelessWidget {
                                   child: Container(
                                     width: 4.67,
                                     height: 4.67,
-                                    child: Stack(children: [
-                                    ,
-                                    ]),
+                                    child: Stack(children: []),
                                   ),
                                 ),
                               ),
@@ -759,7 +757,8 @@ class MainCafeteriaMenuList2 extends StatelessWidget {
                           height: 72,
                           decoration: ShapeDecoration(
                             image: DecorationImage(
-                              image: NetworkImage("https://via.placeholder.com/72x72"),
+                              image: NetworkImage(
+                                  "https://via.placeholder.com/72x72"),
                               fit: BoxFit.fill,
                             ),
                             shape: RoundedRectangleBorder(
@@ -854,9 +853,7 @@ class MainCafeteriaMenuList2 extends StatelessWidget {
                                   child: Container(
                                     width: 4.67,
                                     height: 4.67,
-                                    child: Stack(children: [
-                                    ,
-                                    ]),
+                                    child: Stack(children: []),
                                   ),
                                 ),
                               ),
