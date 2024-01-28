@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-class MainCafeteriaMenuList1 extends StatelessWidget {
+class MainCafeteriaMenuList2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -75,19 +73,19 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                 ),
               ),
               Positioned(
-                left: 10,
+                left: 24,
                 top: 139,
                 child: Container(
-                  width: 465,
-                  height: 32.87,
+                  width: 450,
+                  height: 33,
                   child: Stack(
                     children: [
                       Positioned(
-                        left: 0,
+                        left: 150,
                         top: 0,
                         child: Container(
-                          width: 145,
-                          height: 32.87,
+                          width: 104,
+                          height: 33,
                           decoration: ShapeDecoration(
                             color: Color(0xFFF5B358),
                             shape: RoundedRectangleBorder(
@@ -97,13 +95,31 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        left: 15,
+                        left: 0,
                         top: 5.48,
                         child: SizedBox(
                           width: 115,
                           height: 20.82,
                           child: Text(
                             'Rice and Curry',
+                            style: TextStyle(
+                              color: Color(0xFF2A2D37),
+                              fontSize: 16,
+                              fontFamily: 'Rubik',
+                              fontWeight: FontWeight.w600,
+                              height: 0,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 163,
+                        top: 5,
+                        child: SizedBox(
+                          width: 78,
+                          height: 21,
+                          child: Text(
+                            'Fried Rice',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 16,
@@ -115,25 +131,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        left: 178,
-                        top: 5,
-                        child: SizedBox(
-                          width: 78,
-                          height: 21,
-                          child: Text(
-                            'Fried Rice',
-                            style: TextStyle(
-                              color: Color(0xFF292D32),
-                              fontSize: 16,
-                              fontFamily: 'Rubik',
-                              fontWeight: FontWeight.w600,
-                              height: 0,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        left: 289,
+                        left: 274,
                         top: 6,
                         child: SizedBox(
                           width: 176,
@@ -187,6 +185,11 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                           decoration: ShapeDecoration(
                             color: Color(0xFFF7F7F7),
                             shape: RoundedRectangleBorder(
+                              side: BorderSide(
+                                width: 2,
+                                strokeAlign: BorderSide.strokeAlignCenter,
+                                color: Color(0xFFF5B358),
+                              ),
                               borderRadius: BorderRadius.circular(28),
                             ),
                           ),
@@ -199,7 +202,10 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                           width: 72,
                           height: 72,
                           decoration: ShapeDecoration(
-                            color: Color(0xFFD9D9D9),
+                            image: DecorationImage(
+                              image: NetworkImage("https://via.placeholder.com/72x72"),
+                              fit: BoxFit.fill,
+                            ),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(19),
                             ),
@@ -229,7 +235,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                         child: SizedBox(
                           width: 145,
                           child: Text(
-                            'Rs. 80',
+                            'Rs. 120',
                             style: TextStyle(
                               color: Color(0xFFF5B358),
                               fontSize: 20,
@@ -246,7 +252,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                         child: SizedBox(
                           width: 145,
                           child: Text(
-                            'Veggie',
+                            'Fried Rice',
                             style: TextStyle(
                               color: Color(0xFFA6A6AD),
                               fontSize: 12,
@@ -293,7 +299,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                                     width: 4.67,
                                     height: 4.67,
                                     child: Stack(children: [
-                                    
+                                    ,
                                     ]),
                                   ),
                                 ),
@@ -335,7 +341,10 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                           width: 72,
                           height: 72,
                           decoration: ShapeDecoration(
-                            color: Color(0xFFD9D9D9),
+                            image: DecorationImage(
+                              image: NetworkImage("https://via.placeholder.com/72x72"),
+                              fit: BoxFit.fill,
+                            ),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(19),
                             ),
@@ -365,7 +374,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                         child: SizedBox(
                           width: 145,
                           child: Text(
-                            'Rs. 150',
+                            'Rs. 170',
                             style: TextStyle(
                               color: Color(0xFFF5B358),
                               fontSize: 20,
@@ -382,7 +391,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                         child: SizedBox(
                           width: 145,
                           child: Text(
-                            'Veggie',
+                            'Fried Rice',
                             style: TextStyle(
                               color: Color(0xFFA6A6AD),
                               fontSize: 12,
@@ -429,7 +438,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                                     width: 4.67,
                                     height: 4.67,
                                     child: Stack(children: [
-                                    
+                                    ,
                                     ]),
                                   ),
                                 ),
@@ -471,7 +480,10 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                           width: 72,
                           height: 72,
                           decoration: ShapeDecoration(
-                            color: Color(0xFFD9D9D9),
+                            image: DecorationImage(
+                              image: NetworkImage("https://via.placeholder.com/72x72"),
+                              fit: BoxFit.fill,
+                            ),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(19),
                             ),
@@ -501,7 +513,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                         child: SizedBox(
                           width: 145,
                           child: Text(
-                            'Rs. 150',
+                            'Rs. 170',
                             style: TextStyle(
                               color: Color(0xFFF5B358),
                               fontSize: 20,
@@ -518,7 +530,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                         child: SizedBox(
                           width: 145,
                           child: Text(
-                            'Veggie',
+                            'Fried Rice',
                             style: TextStyle(
                               color: Color(0xFFA6A6AD),
                               fontSize: 12,
@@ -565,7 +577,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                                     width: 4.67,
                                     height: 4.67,
                                     child: Stack(children: [
-                                    
+                                    ,
                                     ]),
                                   ),
                                 ),
@@ -607,7 +619,10 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                           width: 72,
                           height: 72,
                           decoration: ShapeDecoration(
-                            color: Color(0xFFD9D9D9),
+                            image: DecorationImage(
+                              image: NetworkImage("https://via.placeholder.com/72x72"),
+                              fit: BoxFit.fill,
+                            ),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(19),
                             ),
@@ -637,7 +652,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                         child: SizedBox(
                           width: 145,
                           child: Text(
-                            'Rs. 160',
+                            'Rs. 200',
                             style: TextStyle(
                               color: Color(0xFFF5B358),
                               fontSize: 20,
@@ -654,7 +669,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                         child: SizedBox(
                           width: 145,
                           child: Text(
-                            'Veggie',
+                            'Fried Rice',
                             style: TextStyle(
                               color: Color(0xFFA6A6AD),
                               fontSize: 12,
@@ -701,7 +716,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                                     width: 4.67,
                                     height: 4.67,
                                     child: Stack(children: [
-                                    
+                                    ,
                                     ]),
                                   ),
                                 ),
@@ -743,7 +758,10 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                           width: 72,
                           height: 72,
                           decoration: ShapeDecoration(
-                            color: Color(0xFFD9D9D9),
+                            image: DecorationImage(
+                              image: NetworkImage("https://via.placeholder.com/72x72"),
+                              fit: BoxFit.fill,
+                            ),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(19),
                             ),
@@ -773,7 +791,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                         child: SizedBox(
                           width: 145,
                           child: Text(
-                            'Rs. 200',
+                            'Rs. 270',
                             style: TextStyle(
                               color: Color(0xFFF5B358),
                               fontSize: 20,
@@ -790,7 +808,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                         child: SizedBox(
                           width: 145,
                           child: Text(
-                            'test',
+                            'Fried Rice',
                             style: TextStyle(
                               color: Color(0xFFA6A6AD),
                               fontSize: 12,
@@ -837,7 +855,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                                     width: 4.67,
                                     height: 4.67,
                                     child: Stack(children: [
-                                    
+                                    ,
                                     ]),
                                   ),
                                 ),
@@ -895,7 +913,7 @@ class MainCafeteriaMenuList1 extends StatelessWidget {
                         child: SizedBox(
                           width: 115,
                           child: Text(
-                            'Rs. 260',
+                            'Rs. 270',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 30,
