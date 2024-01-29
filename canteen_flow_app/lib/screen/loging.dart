@@ -180,7 +180,14 @@ class _LoginScreenState extends State<LoginScreen> {
                           width: 320,
                           height: 50,
                           child: ElevatedButton(
-                            onPressed: loginUser,
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const HomeScreen(),
+                                ),
+                              );
+                            },
                             style: ElevatedButton.styleFrom(
                               primary: const Color.fromRGBO(245, 179, 88, 1),
                             ),
@@ -218,7 +225,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 child: const Text(
                                   'Create new account',
                                   style: TextStyle(
-                                    color: Color(0xFF2A2D37),
+                                    color: Color.fromARGB(255, 3, 7, 20),
                                     fontSize: 16,
                                     fontFamily: 'Poppins',
                                     fontWeight: FontWeight.w600,
