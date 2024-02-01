@@ -61,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => MainCafeteria(cafeteriaName: '',),
+                              builder: (context) => MainCafeteria(),
                             ),
                           );
                         },
