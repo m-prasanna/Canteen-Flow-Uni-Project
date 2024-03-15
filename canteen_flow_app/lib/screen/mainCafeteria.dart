@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget buildCard(Map<String, dynamic> item, Function onPressed) {
+Widget buildCard(Map<String, dynamic> item, Function onAddPressed, Function onRemovePressed) {
   return GestureDetector(
     child: Card(
       elevation: 5,
@@ -36,23 +36,39 @@ Widget buildCard(Map<String, dynamic> item, Function onPressed) {
                   ],
                 ),
                 const SizedBox(width: 20),
-                ElevatedButton(
-                  onPressed: () =>
-                      onPressed(double.parse(item['price'].substring(3))),
-                  child: const Align(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      '+ Add',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontFamily: 'Rubik',
-                        fontWeight: FontWeight.w700,
-                        height: 0,
+                Container(
+                  alignment: Alignment.center,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                       // background color
+                      onPrimary: Colors.black, // foreground color
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
                       ),
+                      minimumSize: Size(36, 36),
+                      padding: EdgeInsets.zero,
                     ),
+                    onPressed: () => onAddPressed(double.parse(item['price'].substring(3))),
+                    child: Icon(Icons.add, size: 20),
                   ),
-                )
+                ),
+                const SizedBox(width: 10),
+                Container(
+                  alignment: Alignment.center,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                       // background color
+                      onPrimary: Colors.black, // foreground color
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      minimumSize: Size(36, 36),
+                      padding: EdgeInsets.zero,
+                    ),
+                    onPressed: () => onRemovePressed(double.parse(item['price'].substring(3))),
+                    child: Icon(Icons.remove, size: 20),
+                  ),
+                ),
               ],
             ),
           ),
@@ -76,7 +92,7 @@ class _MainCafeteriaState extends State<MainCafeteria> {
   int currentVisibleIndex = 0;
 
   List<Map<String, dynamic>> RiceandCurry = [
-    {"image": "assets/1.png", "name": "Veggie", "price": "Rs.80.00"},
+    {"image": "assets/food/Chicken rice.jpg", "name": "Veggie", "price": "Rs.80.00"},
     {"image": "assets/1.png", "name": "Egg", "price": "Rs.35.00"},
     {"image": "assets/1.png", "name": "Omlet", "price": "Rs.35.00"},
     {"image": "assets/1.png", "name": "Fish", "price": "Rs.65.00"},
@@ -141,6 +157,12 @@ class _MainCafeteriaState extends State<MainCafeteria> {
     });
   }
 
+  void _onRemoveButtonPressed(double price) {
+    setState(() {
+      selectedPrices.remove(price);
+    });
+  }
+
   double _calculateTotalAmount() {
     return selectedPrices.isNotEmpty
         ? selectedPrices.reduce((a, b) => a + b)
@@ -173,7 +195,7 @@ class _MainCafeteriaState extends State<MainCafeteria> {
             SingleChildScrollView(
               child: Column(
                 children: List.generate(RiceandCurry.length, (index) {
-                  return buildCard(RiceandCurry[index], _onAddButtonPressed);
+                  return buildCard(RiceandCurry[index], _onAddButtonPressed, _onRemoveButtonPressed);
                 }),
               ),
             ),
@@ -181,7 +203,7 @@ class _MainCafeteriaState extends State<MainCafeteria> {
             SingleChildScrollView(
               child: Column(
                 children: List.generate(FriedRice.length, (index) {
-                  return buildCard(FriedRice[index], _onAddButtonPressed);
+                  return buildCard(FriedRice[index], _onAddButtonPressed, _onRemoveButtonPressed);
                 }),
               ),
             ),
@@ -189,7 +211,7 @@ class _MainCafeteriaState extends State<MainCafeteria> {
             SingleChildScrollView(
               child: Column(
                 children: List.generate(SnacksShortEats.length, (index) {
-                  return buildCard(SnacksShortEats[index], _onAddButtonPressed);
+                  return buildCard(SnacksShortEats[index], _onAddButtonPressed, _onRemoveButtonPressed);
                 }),
               ),
             ),
@@ -197,7 +219,7 @@ class _MainCafeteriaState extends State<MainCafeteria> {
             SingleChildScrollView(
               child: Column(
                 children: List.generate(Drinks.length, (index) {
-                  return buildCard(Drinks[index], _onAddButtonPressed);
+                  return buildCard(Drinks[index], _onAddButtonPressed, _onRemoveButtonPressed);
                 }),
               ),
             ),

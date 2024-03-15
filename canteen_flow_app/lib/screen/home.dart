@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 class HomeScreen extends StatelessWidget {
   final token;
 
-  const HomeScreen({@required this.token, Key? key}) : super(key: key);
+  const HomeScreen({@required this.token, Key? key, required String userEmail}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
             context,
             MaterialPageRoute(builder: (context) => FeedbackScreen()),
           );
-        },
+        }, userEmail: '',
       ),
       body: SingleChildScrollView(
         child: Center(

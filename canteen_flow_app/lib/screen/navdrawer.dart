@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class AppDrawer extends StatelessWidget {
   final Function() about;
   final Function() feedback;
+  final String userEmail;
 
-  const AppDrawer({super.key, required this.about, required this.feedback});
-  
+  const AppDrawer({Key? key, required this.about, required this.feedback, required this.userEmail});
 
   @override
   Widget build(BuildContext context) {
@@ -14,15 +14,26 @@ class AppDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          const DrawerHeader(
+          DrawerHeader(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(
-                    'assets/Resualt 1.png'), // Replace with your image path
+                image: AssetImage('assets/Resualt 1.png'), // Replace with your image path
                 fit: BoxFit.cover,
               ),
             ),
-            child: null,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  userEmail,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
+                ),
+              ],
+            ),
           ),
           ListTile(
             leading: Icon(Icons.favorite),
@@ -34,23 +45,21 @@ class AppDrawer extends StatelessWidget {
             title: Text('feedback & rate'),
             onTap: feedback,
           ),
-
           ListTile(
             leading: Icon(Icons.exit_to_app),
             title: Text('exit'),
             onTap: () {
-              // Add functionality for the Settings drawer item
               Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const LoginScreen(),
-                                    ),
-                                  );; // Close the drawer
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const LoginScreen(),
+                ),
+              );
             },
           ),
-          // Add more ListTile widgets for additional items
         ],
       ),
     );
   }
 }
+

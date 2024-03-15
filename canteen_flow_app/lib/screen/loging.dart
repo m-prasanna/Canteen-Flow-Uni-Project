@@ -59,11 +59,12 @@ class _LoginScreenState extends State<LoginScreen> {
         });
 
         Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => HomeScreen(token: myToken),
-          ),
-        );
+              context,
+              MaterialPageRoute(
+                builder: (context) => HomeScreen(token: myToken, userEmail: emailController.text),
+              ),
+            );
+
       } else {
         print('Login failed: ${jsonResponse['message']}');
         // Handle login failure, show an error message or perform other actions
@@ -184,7 +185,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const HomeScreen(),
+                                  builder: (context) => const HomeScreen(token: null, userEmail: '',),
                                 ),
                               );
                             },
