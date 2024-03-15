@@ -208,10 +208,3 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 }
 
-void main() {
-  runApp(
-    MaterialApp(
-      home: RegisterScreen(),
-    ),
-  );
-}

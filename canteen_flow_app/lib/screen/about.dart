@@ -76,7 +76,7 @@ class About extends StatelessWidget {
                       width: 308,
                       height: 300,
                       child: Text(
-                        'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante.',
+                        'Our Canteen Flow mobile application build to access to the canteens from anywhere, make easier to see the available meals, what kind of rush and to decide what canteen is suitable for that available time. Stay turned with us for upcoming features.',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 15,

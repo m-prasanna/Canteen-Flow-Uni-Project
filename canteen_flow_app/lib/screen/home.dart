@@ -66,7 +66,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       _buildCafeteriaContainer(
-                        imageAsset: "assets/Resualt 1.png",
+                        imageAsset: "assets/Gallary.jpg",
                         title: 'Gallery Cafeteria',
                         onTap: () {
                           Navigator.push(
@@ -79,7 +79,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       _buildCafeteriaContainer(
-                        imageAsset: "assets/Resualt 1.png",
+                        imageAsset: "assets/G.jpg",
                         title: 'G Canteen',
                         onTap: () {
                           Navigator.push(
