@@ -9,18 +9,17 @@ import 'package:flutter/material.dart';
 class HomeScreen extends StatelessWidget {
   final token;
 
-  const HomeScreen({@required this.token, Key? key}) : super(key: key);
+  const HomeScreen({@required this.token, Key? key, required String userEmail}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Image.asset(
           "assets/splash.png",
-          height: 120,
+          height: 100,
         ),
-        actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.person)),
-        ],
+       
       ),
       drawer: AppDrawer(
         about: () {
@@ -34,7 +33,7 @@ class HomeScreen extends StatelessWidget {
             context,
             MaterialPageRoute(builder: (context) => FeedbackScreen()),
           );
-        },
+        }, userEmail: '',
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -60,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => MainCafeteria(cafeteriaName: '',),
+                              builder: (context) => MainCafeteria(),
                             ),
                           );
                         },

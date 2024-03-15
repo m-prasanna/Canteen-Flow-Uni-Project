@@ -28,17 +28,6 @@ class WelcomeScreen extends StatelessWidget {
                         horizontal: 25,
                         vertical: 5,
                       ),
-                      child: Text(
-                        'Skip',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          color: Color(0xFFFDFDFF),
-                          fontSize: 23,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w600,
-                          height: 1.2,
-                        ),
-                      ),
                     ),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.5,
@@ -67,8 +56,8 @@ class WelcomeScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 20.0),
                           SizedBox(
-                            width:
-                                200, // Adjust the width of the buttons as needed
+                            width: 220,
+                            height: 50, // Adjust the width of the buttons as needed
                             child: ElevatedButton(
                               onPressed: () {
                                 Navigator.push(
@@ -86,15 +75,16 @@ class WelcomeScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 12.0),
                           SizedBox(
-                            width:
-                                200, // Adjust the width of the buttons as needed
+                            width: 220,
+                            height: 50,
+                            // Adjust the width of the buttons as needed
                             child: ElevatedButton(
                               onPressed: () {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                             RegisterScreen()));
+                                            RegisterScreen()));
                               },
                               style: ElevatedButton.styleFrom(
                                 primary:

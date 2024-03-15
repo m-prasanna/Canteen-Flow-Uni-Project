@@ -8,7 +8,7 @@ class FeedbackScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(350),
+        preferredSize: const Size.fromHeight(190),
         child: AppBar(
           flexibleSpace: Container(
             height: 600,
@@ -150,7 +150,7 @@ class FeedbackScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 50.0),
                       child: Container(
                         width: 40,
                         height: 40, // Reduced the height for the Submit button
