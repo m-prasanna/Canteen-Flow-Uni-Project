@@ -73,12 +73,13 @@ class FeedbackScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 25),
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
                       child: TextFormField(
                         maxLines: 9,
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Color.fromARGB(238, 220, 223, 223),
+                          fillColor: const 
+                          Color.fromARGB(238, 220, 223, 223),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(28),
                             borderSide: BorderSide.none,
@@ -114,17 +115,17 @@ class FeedbackScreen extends StatelessWidget {
                           width: double.infinity,
                           height: 50,
                           decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 255, 255, 255),
+                            color: const Color.fromARGB(255, 255, 255, 255),
                             border: Border.all(
                               width: 1,
                               color: const Color(0xFFF5B358),
                             ),
                             borderRadius: BorderRadius.circular(50),
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
+                              children: [
                                 Text(
                                   'Upload Photo',
                                   style: TextStyle(
@@ -152,7 +153,7 @@ class FeedbackScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 50.0),
                       child: Container(
                         width: 40,
-                        height: 50, // Reduced the height for the Submit button
+                        height: 40, // Reduced the height for the Submit button
                         decoration: BoxDecoration(
                           color: const Color(0xFFF5B358),
                           borderRadius: BorderRadius.circular(18),

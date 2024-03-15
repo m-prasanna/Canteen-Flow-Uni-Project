@@ -9,7 +9,8 @@ import 'package:flutter/material.dart';
 class HomeScreen extends StatelessWidget {
   final token;
 
-  const HomeScreen({@required this.token, Key? key, required String userEmail}) : super(key: key);
+  const HomeScreen({@required this.token, Key? key, required String userEmail})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,6 @@ class HomeScreen extends StatelessWidget {
           "assets/splash.png",
           height: 100,
         ),
-       
       ),
       drawer: AppDrawer(
         about: () {
@@ -33,7 +33,8 @@ class HomeScreen extends StatelessWidget {
             context,
             MaterialPageRoute(builder: (context) => FeedbackScreen()),
           );
-        }, userEmail: '',
+        },
+        userEmail: '',
       ),
       body: SingleChildScrollView(
         child: Center(
