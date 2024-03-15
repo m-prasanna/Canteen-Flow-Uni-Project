@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
-Widget buildCard(Map<String, dynamic> item, Function onAddPressed, Function onRemovePressed) {
+Widget buildCard(
+  Map<String, dynamic> item,
+  Function onAddPressed,
+  Function onRemovePressed,
+) {
   return GestureDetector(
     child: Card(
       elevation: 5,
@@ -8,71 +12,66 @@ Widget buildCard(Map<String, dynamic> item, Function onAddPressed, Function onRe
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30),
       ),
-      child: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 15),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 15),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            const SizedBox(width: 20),
+            Image.asset(
+              item['image'],
+              width: 80, // Adjust as needed
+              height: 80, // Adjust as needed
+            ),
+            const SizedBox(width: 40),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                const SizedBox(width: 20),
-                Image.asset(
-                  item['image'],
-                  width: 80, // Adjust as needed
-                  height: 80, // Adjust as needed
+                Text(
+                  item['name'],
+                  style: const TextStyle(fontSize: 18, color: Colors.white),
                 ),
-                const SizedBox(width: 40),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      item['name'],
-                      style: const TextStyle(fontSize: 18, color: Colors.white),
+                Text(
+                  item['price'],
+                  style: const TextStyle(fontSize: 18, color: Colors.white),
+                )
+              ],
+            ),
+            Expanded(child: SizedBox()), // Pushes buttons to the right
+            Row(
+              mainAxisSize: MainAxisSize.min, // Keep the buttons as small as possible
+              children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    onPrimary: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    Text(
-                      item['price'],
-                      style: const TextStyle(fontSize: 18, color: Colors.white),
-                    )
-                  ],
-                ),
-                const SizedBox(width: 20),
-                Container(
-                  alignment: Alignment.center,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                       // background color
-                      onPrimary: Colors.black, // foreground color
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      minimumSize: Size(36, 36),
-                      padding: EdgeInsets.zero,
-                    ),
-                    onPressed: () => onAddPressed(double.parse(item['price'].substring(3))),
-                    child: Icon(Icons.add, size: 20),
+                    minimumSize: Size(36, 36),
+                    padding: EdgeInsets.zero,
                   ),
+                  onPressed: () =>
+                      onAddPressed(double.parse(item['price'].substring(3))),
+                  child: Icon(Icons.add, size: 20),
                 ),
                 const SizedBox(width: 10),
-                Container(
-                  alignment: Alignment.center,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                       // background color
-                      onPrimary: Colors.black, // foreground color
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      minimumSize: Size(36, 36),
-                      padding: EdgeInsets.zero,
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    onPrimary: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    onPressed: () => onRemovePressed(double.parse(item['price'].substring(3))),
-                    child: Icon(Icons.remove, size: 20),
+                    minimumSize: Size(36, 36),
+                    padding: EdgeInsets.zero,
                   ),
+                  onPressed: () =>
+                      onRemovePressed(double.parse(item['price'].substring(3))),
+                  child: Icon(Icons.remove, size: 20),
                 ),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     ),
     onTap: () {},
@@ -92,32 +91,31 @@ class _MainCafeteriaState extends State<MainCafeteria> {
   int currentVisibleIndex = 0;
 
   List<Map<String, dynamic>> RiceandCurry = [
-    {"image": "assets/food/Chicken rice.jpg", "name": "Veggie", "price": "Rs.80.00"},
-    {"image": "assets/1.png", "name": "Egg", "price": "Rs.35.00"},
-    {"image": "assets/1.png", "name": "Omlet", "price": "Rs.35.00"},
-    {"image": "assets/1.png", "name": "Fish", "price": "Rs.65.00"},
-    {"image": "assets/1.png", "name": "Chicken Taco", "price": "Rs.35.00"},
+    {"image": "assets/food/Veggie.png", "name": "Veggie", "price": "Rs.80.00"},
+    {"image": "assets/food/Egg.png", "name": "Egg", "price": "Rs.35.00"},
+    {"image": "assets/food/Omlet.png", "name": "Omlet", "price": "Rs.35.00"},
+    {"image": "assets/food/Fish.png", "name": "Fish", "price": "Rs.65.00"},
+    {"image": "assets/food/Chicken.png", "name": "Chicken Taco", "price": "Rs.35.00"},
   ];
   List<Map<String, dynamic>> FriedRice = [
     {"image": "assets/1.png", "name": "Veggie", "price": "Rs.80.00"},
-    {"image": "assets/1.png", "name": "Egg", "price": "Rs.35.00"},
-    {"image": "assets/1.png", "name": "Omlet", "price": "Rs.35.00"},
-    {"image": "assets/1.png", "name": "Fish", "price": "Rs.65.00"},
-    {"image": "assets/1.png", "name": "Chicken Taco", "price": "Rs.35.00"},
+    {"image": "assets/food/Egg rice.png", "name": "Egg", "price": "Rs.35.00"},
+    {"image": "assets/food/Omlet rice.png", "name": "Omlet", "price": "Rs.35.00"},
+    {"image": "assets/food/Fish rice.png", "name": "Fish", "price": "Rs.65.00"},
+    {"image": "assets/food/Chicken rice.png", "name": "Chicken Taco", "price": "Rs.35.00"},
   ];
   List<Map<String, dynamic>> SnacksShortEats = [
-    {"image": "assets/1.png", "name": "Veggie", "price": "Rs.80.00"},
-    {"image": "assets/1.png", "name": "Egg", "price": "Rs.35.00"},
-    {"image": "assets/1.png", "name": "Omlet", "price": "Rs.35.00"},
-    {"image": "assets/1.png", "name": "Fish", "price": "Rs.65.00"},
-    {"image": "assets/1.png", "name": "Chicken Taco", "price": "Rs.35.00"},
+    {"image": "assets/food/Kadala Vadai.png", "name": "Kadal Vadai", "price": "Rs.80.00"},
+    {"image": "assets/food/Mutton Rolls.jpg.png", "name": "Mutton Rolls", "price": "Rs.35.00"},
+    {"image": "assets/food/Patties.png", "name": "Patties", "price": "Rs.35.00"},
+    {"image": "assets/food/Samosas.png", "name": "Samosa", "price": "Rs.65.00"},
+    {"image": "assets/food/Fish Cutlets.png", "name": "Fish Cutlets", "price": "Rs.35.00"},
   ];
   List<Map<String, dynamic>> Drinks = [
-    {"image": "assets/1.png", "name": "Veggie", "price": "Rs.80.00"},
-    {"image": "assets/1.png", "name": "Egg", "price": "Rs.35.00"},
-    {"image": "assets/1.png", "name": "Omlet", "price": "Rs.35.00"},
-    {"image": "assets/1.png", "name": "Fish", "price": "Rs.65.00"},
-    {"image": "assets/1.png", "name": "Chicken Taco", "price": "Rs.35.00"},
+    {"image": "assets/food/Lemon Juice.png", "name": "Lemon Juice", "price": "Rs.80.00"},
+    {"image": "assets/food/Mango Juice.png", "name": "Mango Juice", "price": "Rs.35.00"},
+    {"image": "assets/food/Papaya Juice.png", "name": "Omlet", "price": "Rs.35.00"},
+    {"image": "assets/food/Watermelon.png", "name": "Watermelon", "price": "Rs.65.00"},
   ];
 
   List<double> selectedPrices = [];
@@ -195,7 +193,8 @@ class _MainCafeteriaState extends State<MainCafeteria> {
             SingleChildScrollView(
               child: Column(
                 children: List.generate(RiceandCurry.length, (index) {
-                  return buildCard(RiceandCurry[index], _onAddButtonPressed, _onRemoveButtonPressed);
+                  return buildCard(
+                      RiceandCurry[index], _onAddButtonPressed, _onRemoveButtonPressed);
                 }),
               ),
             ),
@@ -203,7 +202,8 @@ class _MainCafeteriaState extends State<MainCafeteria> {
             SingleChildScrollView(
               child: Column(
                 children: List.generate(FriedRice.length, (index) {
-                  return buildCard(FriedRice[index], _onAddButtonPressed, _onRemoveButtonPressed);
+                  return buildCard(
+                      FriedRice[index], _onAddButtonPressed, _onRemoveButtonPressed);
                 }),
               ),
             ),
@@ -211,7 +211,8 @@ class _MainCafeteriaState extends State<MainCafeteria> {
             SingleChildScrollView(
               child: Column(
                 children: List.generate(SnacksShortEats.length, (index) {
-                  return buildCard(SnacksShortEats[index], _onAddButtonPressed, _onRemoveButtonPressed);
+                  return buildCard(SnacksShortEats[index], _onAddButtonPressed,
+                      _onRemoveButtonPressed);
                 }),
               ),
             ),
@@ -300,3 +301,5 @@ class _MainCafeteriaState extends State<MainCafeteria> {
     );
   }
 }
+
+

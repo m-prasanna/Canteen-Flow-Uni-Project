@@ -17,11 +17,9 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Image.asset(
           "assets/splash.png",
-          height: 120,
+          height: 100,
         ),
-        actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.person)),
-        ],
+       
       ),
       drawer: AppDrawer(
         about: () {
